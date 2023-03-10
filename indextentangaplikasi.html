@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mari belajar Peredaran darah</title>
+	<link rel="stylesheet" href="css/v3style1.css">
+</head>
+<body>
+
+	<div class="img-slider">
+		<!--  slider per halaman-->
+			<!--  slider 1-->
+		<div class="box">
+			<div class="slide active">
+			<img src="background/images (1).jpg" alt="">
+			<div class="info">
+				<h1>Kompetensi Dasar</h1>
+				<h2></h2>
+				<h3> materi </h3>
+				<div class="card">
+					<p>1. Menerima, menjalankan, dan menghargai ajaran agama yang dianutnya.</p>
+					<P>2. Menunjukkan perilaku jujur, disiplin, santun, percaya diri, peduli, dan bertanggung jawab dalam berinteraksi dengan keluarga, teman, guru, dan tetangga, dan negara.</P>
+					<p>3. Memahami pengetahuan faktual, konseptual, prosedural, dan Menunjukkan perilaku jujur, disiplin, santun, percaya diri, peduli, dan bertanggung jawab dalam berinteraksi dengan keluarga, teman, guru, dan tetangga, dan negara.</p>
+					<p>4. Menunjukkan keterampilan berfikir dan bertindak kreatif, produktif, kritis, mandiri, kolaboratif, dan komunikatif. Dalam bahasa yang jelas, sistematis, logis dan kritis, dalam karya yang estetis, dalam gerakan yang mencerminkan anak sehat, dan tindakan yang mencerminkan perilaku anak sesuai dengan tahap perkembangannya.
+					</p>
+				</div>		
+			</div>
+			</div>	
+		</div>
+			<!--  slider 2-->
+			<div class="slide">
+			<img src="background/images (2).jpg" alt="">
+			<div class="info">
+				<h1>biodata perancang</h1>
+				<h2> </h2>
+				<h3> materi </h3>
+				<div class="card">
+					<img src="ilustration/ivan.png">
+						<p>Nama:ivan fajrin</p>
+						<p>Nim:34301900044</p>
+				</div>
+			</div>
+			</div>	
+		<!--  slider 2-->
+			<div class="slide">
+			<img src="background/images (2).jpg" alt="">
+			<div class="info">
+				<h1>app information</h1>
+				<h2> </h2>
+				<h3> materi </h3>
+				<div class="card">
+					<img src="ilustration/ivan.png">
+						
+						<p>Aplikasi ini menggunakan Web Appsgeyser dalam pembuatan</p>
+						<p>Sumber materi didapatkan dari buku tematik kelas 5 tema 4   </p>
+						<p>Ilustrasi yang digunakan didapatkan di pinteres.com </p>
+						<p>Video yang digunakan pada aplikasi ini didapatkan dari youtube Geniora</p>
+							
+				</div>
+			</div>
+			</div>	
+			<div class="navigation">
+				<div class="btn active"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<a href="index.html"><div class="btn"></div></a>	
+			</div>
+			
+		</div>
+	
+
+			
+	<script type="text/javascript">
+		var slides = document.querySelectorAll('.slide');
+		var btns = document.querySelectorAll('.btn');
+		let currentSlide = 1;
+
+		//images slider
+		//var manua
+		var manualNav = function(manual){
+			slides.forEach((slide) => {
+				slide.classList.remove('active');
+
+				btns.forEach((btn) => {
+					btn.classList.remove('active');
+				});
+			});
+		
+			slides[manual].classList.add('active');
+			btns[manual].classList.add('active');
+		}
+
+		btns.forEach((btn, i) => {
+			btn.addEventListener("click", () =>{
+				manualNav(i);
+				currentSlide = i;
+			});
+		});
+
+		//javascript for image slider
+		/*var repeat = function(activeClass){
+			let active = document.getElementByClassName('active');
+			let i = 1;
+
+			var repeater = () => {
+				setTimeout(function(){
+
+					slides[i].classList.add('active');
+					btns[i].classList.add('active');
+					i++;
+
+					if(slides.length == i){
+						i = 0;
+					}
+
+					if(i >= slides.length){
+						return;
+					}
+					repeater();
+				}, 10000);
+				}
+				repeater();
+		}
+		repeat();
+		*/
+		var repeat = function(activeClass){
+			let active = document.getElementsByClassName('active');
+			let i = 1;
+
+			var repeater = () => {
+				setTimeout(function(){
+					[...active].forEach((activeSlide) => {
+						activeSlide.classList.remove('active');
+						});
+
+					slides[i].classList.add('active');
+					btns[i].classList.add('active');
+					i++;
+
+
+					if(slides.length == i){
+						i = 0;
+					}
+					if(i >= slides.length){
+						return;
+					}
+					repeater();
+				}, 100000);
+			} 
+			repeater();
+		} 
+		repeat();
+
+	</script>
+</body>
+</html>

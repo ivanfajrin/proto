@@ -1,0 +1,59 @@
+
+@media(max-width: 720px){
+body{
+    max-height: 720px;
+    max-width: 360px;
+}
+
+.info_box{
+    background-color: #F9FFFF;
+    max-width: 360px;
+    max-height: 700px;
+}
+.info_box .info-title{
+	padding: 1vh;
+	max-width: 360px;
+	font-size: 0.02vh;
+}
+.info_box .info-title span{
+	w
+	max-width:360px;
+	height: 8vh;
+}
+.info_box{
+	padding: 0 8vh;
+}
+.info_box .info-list{
+	width: 70vh;
+	max-width: 330px;
+	height: 60vh;
+	max-height: 690px;
+	margin: 1vh;
+	position: revert;
+	left: 10vh;
+}
+.quiz_box{
+	
+	max-width: 360px;
+	height: 100vh;
+	max-height: 600px;
+
+}
+section{
+	background:none;
+	max-height: 590px;
+	max-width: 300px;
+	font-size: 0.01vh;
+}
+section .quiz_text{
+	font-size: 0.2vh;
+}
+section .option_list{
+padding: 0;
+height: 40vh;
+font-size: 0.12vh;
+}
+footer{
+	background-color: #fff;
+}
+}

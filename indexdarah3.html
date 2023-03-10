@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mari belajar Peredaran Darah</title>
+	<link rel="stylesheet" href="css/v3style1.css">
+</head>
+<body>
+
+	<div class="img-slider">
+		<!--  slider per halaman-->
+			<!--  slider 1-->
+		<div class="box">
+			<div class="slide active">
+			<img src="background/images(17).png" alt="">
+			<div class="info">
+				<h1> Menjaga Kesehatan Sistem Peredaran</h1>
+				<h1>Darah </h1>
+				<h2>  </h2>
+				<h3> Materi </h3>
+				<div class="card">
+					<img src="ilustration/darah15.png">
+					<p>Untuk menjaga kesehatan jantung maka ada beberapa cara yaitu:</p>
+				</div>		
+			</div>
+			</div>	
+		</div>
+			<!--  slider 2-->
+			<div class="slide">
+			<img src="background/images(17).png" alt="">
+			<div class="info">
+				<h1> Menjaga Kesehatan Sistem Peredaran</h1>
+				<h1>Darah </h1>
+				<h2>A. Olahraga</h2>
+				<h3>Materi</h3>
+				<div class="card">
+					<img src="ilustration/darah13.png">
+					<p>	Manfaat olahraga terhadap jantung menguatkan otot-otot jantung, mengontrol tekanan darah, mengendalikan kadar gula darah, dan menurunkan berat badan.
+					</p>	
+						
+				</div>
+			</div>
+			</div>	
+
+			
+			<div class="slide">
+			<img src="background/images(17).png" alt="">
+			<div class="info">
+				<h1> Menjaga Kesehatan Sistem Peredaran</h1>
+				<h1>Darah </h1>
+				<h2> B. makan makanan sehat </h2>
+				<h3> materi </h3>
+				<div class="card">
+					<img src="ilustration/darah 29.png">
+					<p>Menjaga pola makan sangat membantu menjaga kesehatan jantung
+					, makanan yang memiliki kadar garam yang tinggi dapat menyebabkan tekanan darah tinggi sehingga dapat menngancam kesehatan jantung, begitu juga makanan berlemak tinggi yang, kandungan lemak tinggi dapat menyebapkan penyumbatan pembuuh darah. 
+					</p>
+					
+				</div>
+			</div>
+			</div>
+			<div class="slide">
+			<img src="background/images(17).png" alt="">
+			<div class="info">
+			<h1> Menjaga Kesehatan Sistem Peredaran</h1>
+				<h1>Darah </h1>
+				<h2> C. makan makanan sehat </h2>
+				<h3> materi </h3>
+				<div class="card">
+					<img src="ilustration/darah21.png">
+					<p> Beberapa makanan dari buah-buahan dan sayuran yang memiliki kadar antioksidan tinggi dapat memelihara kesehatan jantung misalya bayam, kangkung dan sawi.</p>
+				</div>
+			</div>
+			</div>		
+			<div class="slide">
+				<img src="background/images(17).png" alt="">
+				<div class="info">
+				<h1> Menjaga Kesehatan Sistem Peredaran</h1>
+				<h1>Darah </h1>
+					<h2> D. Menjaga Berat Badan  </h2>
+					<h3> materi </h3>
+					<div class="card">
+						<img src="ilustration/DARAH 22.png">
+						<p>Berat badan berlebihan dapat memperberat kerja jantung, selain itu berat badan yang disebabkan oleh lemak rentan terhadap penyumbatan darah oleh karen itu kita perlu menjaga berat badan ideal</p>
+					</div>
+				</div>	
+			</div>
+			<div class="slide">
+				<img src="background/images(3).jpg" alt="">
+				<div class="info">
+					<h1>slide 2</h1>
+					<h2> judul </h2>
+					<h3> materi </h3>
+					<div class="card">
+						<!--<img src="ilustration/darah4.png" >
+						-->
+					
+						<a href="index.html"><div class="button">Kembali</div></a>
+					</div>
+				</div>
+			</div>	
+		
+			<div class="navigation">
+				<div class="btn active"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<a href="index.html"><div class="btn"></div></a>	
+
+			</div>
+			
+		</div>
+	
+
+			
+	<script type="text/javascript">
+		var slides = document.querySelectorAll('.slide');
+		var btns = document.querySelectorAll('.btn');
+		let currentSlide = 1;
+
+		//images slider
+		//var manua
+		var manualNav = function(manual){
+			slides.forEach((slide) => {
+				slide.classList.remove('active');
+
+				btns.forEach((btn) => {
+					btn.classList.remove('active');
+				});
+			});
+		
+			slides[manual].classList.add('active');
+			btns[manual].classList.add('active');
+		}
+
+		btns.forEach((btn, i) => {
+			btn.addEventListener("click", () =>{
+				manualNav(i);
+				currentSlide = i;
+			});
+		});
+
+		//javascript for image slider
+		/*var repeat = function(activeClass){
+			let active = document.getElementByClassName('active');
+			let i = 1;
+
+			var repeater = () => {
+				setTimeout(function(){
+
+					slides[i].classList.add('active');
+					btns[i].classList.add('active');
+					i++;
+
+					if(slides.length == i){
+						i = 0;
+					}
+
+					if(i >= slides.length){
+						return;
+					}
+					repeater();
+				}, 10000);
+				}
+				repeater();
+		}
+		repeat();
+		*/
+		var repeat = function(activeClass){
+			let active = document.getElementsByClassName('active');
+			let i = 1;
+
+			var repeater = () => {
+				setTimeout(function(){
+					[...active].forEach((activeSlide) => {
+						activeSlide.classList.remove('active');
+						});
+
+					slides[i].classList.add('active');
+					btns[i].classList.add('active');
+					i++;
+
+
+					if(slides.length == i){
+						i = 0;
+					}
+					if(i >= slides.length){
+						return;
+					}
+					repeater();
+				}, 100000);
+			} 
+			repeater();
+		} 
+		repeat();
+
+	</script>
+</body>
+</html>
